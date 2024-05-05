@@ -18,8 +18,8 @@ import java.util.ArrayList;
 
 public class ScanRVAdapter extends RecyclerView.Adapter<ScanRVAdapter.ViewHolder> {
 
-    private ArrayList<ScanItems> scanItemsArrayList;
-    private Context context;
+    private final ArrayList<ScanItems> scanItemsArrayList;
+    private final Context context;
 
     public ScanRVAdapter(ArrayList<ScanItems> scanItemsArrayList, Context context) {
         this.scanItemsArrayList = scanItemsArrayList;
@@ -60,19 +60,20 @@ public class ScanRVAdapter extends RecyclerView.Adapter<ScanRVAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-
         return scanItemsArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView barcodeTV, itemDescriptionTV, scanQtyTV;
+        private final TextView barcodeTV;
+        private final TextView itemDescriptionTV;
+        private final TextView scanQtyTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            barcodeTV = (TextView) itemView.findViewById(R.id.idTVBarcode);
-            itemDescriptionTV = (TextView) itemView.findViewById(R.id.idTVItemDescription);
-            scanQtyTV = (TextView) itemView.findViewById(R.id.idTVScanQty);
+            barcodeTV = itemView.findViewById(R.id.idTVBarcode);
+            itemDescriptionTV = itemView.findViewById(R.id.idTVItemDescription);
+            scanQtyTV = itemView.findViewById(R.id.idTVScanQty);
         }
     }
 }

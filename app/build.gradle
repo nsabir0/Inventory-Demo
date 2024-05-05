@@ -23,13 +23,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
-        warning("deprecation")
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-        abortOnError false
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -45,6 +38,11 @@ android {
         }
     }
     ndkVersion '26.3.11579264'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        warning 'deprecation'
+    }
 }
 
 dependencies {
@@ -52,11 +50,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/poi-3.14-20160307.jar')
     implementation files('libs/Jb380_Common_V1.2.jar')
-
-//    implementation('com.github.turhanoz:reactivedirectorychooser:1.1.0') {
-//        transitive = true
-//        exclude(group: "com.android.support") //conflicts with support-v4 from gradle
-//    }
 
     implementation libs.appcompat
     implementation libs.material
@@ -76,5 +69,6 @@ dependencies {
     implementation libs.converter.gson
     implementation libs.sugar
     implementation(libs.zxing.android.embedded) { transitive = false }
+    implementation libs.core
 
 }

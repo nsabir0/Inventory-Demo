@@ -5,12 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Vibrator;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ms.inventory.R;
 import com.ms.inventory.utils.DBHelper;
@@ -22,10 +23,8 @@ public class UpdateScanItemActivity extends AppCompatActivity {
 
     private static final String TAG = "UpdateScanItemActivity";
 
-    private TextView tvuBarcode, tvuDescription;
-    private EditText edtuScanQty;
-    private FancyButton btnuCancel, btnuSave, btnuDelete;
     private DBHelper DB;
+    private EditText edtuScanQty;
     String barcode, itemDescription, scanQty;
     Vibrator mVibrator;
 
@@ -34,12 +33,12 @@ public class UpdateScanItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_scan_item);
 
-        tvuBarcode = findViewById(R.id.tvu_barcode_id);
-        tvuDescription = findViewById(R.id.tvu_description_id);
+        TextView tvuBarcode = findViewById(R.id.tvu_barcode_id);
+        TextView tvuDescription = findViewById(R.id.tvu_description_id);
         edtuScanQty = findViewById(R.id.edtu_scan_qty_id);
-        btnuCancel = findViewById(R.id.btnu_cancel_id);
-        btnuSave = findViewById(R.id.btnu_save_id);
-        btnuDelete = findViewById(R.id.btnu_delete_id);
+        FancyButton btnuCancel = findViewById(R.id.btnu_cancel_id);
+        FancyButton btnuSave = findViewById(R.id.btnu_save_id);
+        FancyButton btnuDelete = findViewById(R.id.btnu_delete_id);
 
         DB = new DBHelper(UpdateScanItemActivity.this);
 
@@ -76,33 +75,72 @@ public class UpdateScanItemActivity extends AppCompatActivity {
         });
     }
 
+    //    private void processForUpdate() {
+//
+//        String newQty = edtuScanQty.getText().toString().trim();
+//        Double newDoubleQty = Double.parseDouble(newQty);
+//
+//        if (newQty.isEmpty()) {
+//            Utils.errorDialog(this, "Empty Quantity!", "Scan Quantity is empty. Please enter quantity");
+//            errorVibration();
+//            return;
+//        }
+//
+//        try {
+//            if (newDoubleQty <= 0) {
+//                Utils.errorDialog(this, "Zero Quantity!", "Zero Quantity is not allowed. Please enter positive quantity");
+//                errorVibration();
+//                return;
+//            }
+//        } catch (Exception e) {
+//            Log.e(TAG, "processForUpdate: " + e);
+//        }
+//
+//        if (newDoubleQty.equals(Double.parseDouble(scanQty))) {
+//            finish();
+//        } else {
+//            DB.updateScanItem(barcode, newQty);
+//            Toast.makeText(UpdateScanItemActivity.this, "Item Updated", Toast.LENGTH_SHORT).show();
+////            ViewScanItems.getInstance().loadScanItems();
+//            ViewScanItems.getInstance().refreshRecyclerView();
+//            finish();
+//        }
+//    }
+
     private void processForUpdate() {
+        String newQty = edtuScanQty.getText().toString().trim();
 
-        String scanQty = edtuScanQty.getText().toString().trim();
-
-        if (scanQty.isEmpty()) {
+        if (newQty.isEmpty()) {
             Utils.errorDialog(this, "Empty Quantity!", "Scan Quantity is empty. Please enter quantity");
             errorVibration();
             return;
         }
 
+        double newDoubleQty = Double.parseDouble(newQty);
+        String newDoubleQtyStr = String.valueOf(newDoubleQty);
+
         try {
-            if (Integer.parseInt(scanQty)<=0) {
+            if (newDoubleQty <= 0) {
                 Utils.errorDialog(this, "Zero Quantity!", "Zero Quantity is not allowed. Please enter positive quantity");
                 errorVibration();
                 return;
             }
-        }catch (Exception e){
-
+        } catch (NumberFormatException e) {
+            Log.e(TAG, "processForUpdate: " + e);
+            return;
         }
 
-        DB.updateScanItem(barcode, edtuScanQty.getText().toString());
-        Toast.makeText(UpdateScanItemActivity.this, "Item Updated", Toast.LENGTH_SHORT).show();
-        ViewScanItems.getInstance().loadScanItems();
-        finish();
+        if (newDoubleQtyStr.equals(scanQty)) {
+            finish();
+        } else {
+            DB.updateScanItem(barcode, newDoubleQtyStr);
+            ViewScanItems.getInstance().updateScanItem(barcode, newDoubleQtyStr); // Update the item in the list
+            Toast.makeText(UpdateScanItemActivity.this, "Item Updated", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
-    private void deleteConfirmationDialog(){
+    private void deleteConfirmationDialog() {
         AlertDialog.Builder d = new AlertDialog.Builder(this);
         d.setTitle("Confirmation");
         d.setMessage("Are you want to delete item");

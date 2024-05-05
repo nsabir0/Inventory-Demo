@@ -13,16 +13,16 @@ public class AppController extends SugarApp {
 
       private RequestQueue mRequestQueue;
 
-      private static AppController instance;
+      private static AppController mInstance;
 
       @Override
       public void onCreate() {
             super.onCreate();
-            instance = this;
+            mInstance = this;
       }
 
       public static synchronized AppController getInstance() {
-            return instance;
+            return mInstance;
       }
 
       public RequestQueue getRequestQueue() {

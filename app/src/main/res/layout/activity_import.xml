@@ -1,10 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ImportActivity">
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="80dp"
+    tools:context="com.ms.inventory.activity.ImportActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_csv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:visibility="gone"
+        fancy:fb_defaultColor="@color/button_normal"
+        fancy:fb_focusColor="@color/button_pressed"
+        fancy:fb_text="Import From CSV" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_excel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="15dp"
+        fancy:fb_defaultColor="@color/button_normal"
+        fancy:fb_focusColor="@color/button_pressed"
+        fancy:fb_text="Import From Excel" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_backup_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="15dp"
+        fancy:fb_defaultColor="@color/button_normal"
+        fancy:fb_focusColor="@color/button_pressed"
+        fancy:fb_text="Backup Database" />
+
+</LinearLayout>

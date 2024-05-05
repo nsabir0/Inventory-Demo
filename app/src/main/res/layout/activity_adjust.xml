@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
@@ -13,7 +12,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:paddingTop="20dp">
-                <TextView android:text="Adjust Scan Quantity"
+                <TextView android:text="@string/adjust_scan_quantity"
                     android:padding="15dp"
                     android:gravity="center"
                     android:layout_marginBottom="20dp"
@@ -40,11 +40,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Barcode: "/>
+                        android:text="@string/barcode"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_item_code"
                         android:focusable="true"
@@ -60,9 +60,6 @@
                             android:background="@android:color/white"
                             android:imeOptions="actionSearch"
                             android:padding="5dp"
-                            android:paddingBottom="3dp"
-                            android:paddingRight="5dp"
-                            android:paddingTop="3dp"
                             android:singleLine="true"/>
 
                         <mehdi.sakout.fancybuttons.FancyButton
@@ -78,8 +75,8 @@
                             android:layout_marginTop="-5dp"
                             android:onClick="onClick"
                             android:paddingBottom="5dp"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="10dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="10dp"
                             android:paddingTop="5dp"/>
 
                     </LinearLayout>
@@ -91,11 +88,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Item Code: "/>
+                        android:text="@string/item_code"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_item_code"
                         android:focusable="true"
@@ -112,9 +109,6 @@
                             android:textColor="@drawable/color_edittext"
                             android:imeOptions="actionSearch"
                             android:padding="5dp"
-                            android:paddingBottom="3dp"
-                            android:paddingRight="5dp"
-                            android:paddingTop="3dp"
                             android:singleLine="true"
                             android:enabled="false"/>
 
@@ -128,8 +122,8 @@
                             android:layout_marginTop="-5dp"
                             android:onClick="onClick"
                             android:paddingBottom="5dp"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="10dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="10dp"
                             android:paddingTop="5dp"
                             fancy:fb_defaultColor="@color/button_normal"
                             fancy:fb_focusColor="@color/button_pressed"
@@ -139,18 +133,18 @@
                     </LinearLayout>
                 </TableRow>
                 <TableRow android:id="@+id/layout_stock"
-                    android:layout_marginBottom="10dp">
+                          android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stock Qty: "/>
+                        android:text="@string/stock_qty"/>
 
                     <EditText
                         android:id="@+id/edt_stock_qty"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_edittext"
                         android:enabled="false"
@@ -161,18 +155,18 @@
                 </TableRow>
 
                 <TableRow android:id="@+id/layout_scan_qty"
-                    android:layout_marginBottom="10dp">
+                          android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scan Qty: "/>
+                        android:text="@string/scan_qty"/>
 
                     <EditText
                         android:id="@+id/edt_scan_qty"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_edittext"
                         android:enabled="false"
@@ -182,49 +176,18 @@
                         android:textColor="@drawable/color_edittext"/>
                 </TableRow>
 
-                <!--<LinearLayout android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Scan Qty: "/>
-
-                    <TextView
-                        android:id="@+id/tv_total_scan_qty"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_textview"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="5dp"
-
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:textStyle="bold"/>
-
-                    &lt;!&ndash;<RadioButton
-                        android:id="@+id/rdbtn_multiple_qty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Multiple Qty"/>&ndash;&gt;
-
-                </LinearLayout>-->
-
                 <TableRow android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adj Qty: "/>
+                        android:text="@string/adj_qty"/>
 
                     <EditText
                         android:id="@+id/edt_adjusted_qty"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_edittext"
                         android:enabled="false"
@@ -239,13 +202,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adj Qty: "/>
+                        android:text="@string/adj_qty"/>
 
                     <EditText
                         android:id="@+id/edt_adjust_qty"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_edittext"
                         android:imeOptions="actionDone"

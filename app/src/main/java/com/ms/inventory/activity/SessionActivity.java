@@ -34,6 +34,8 @@ import java.util.Locale;
 
 public class SessionActivity extends AppCompatActivity {
 
+    private static final String TAG = "AdjustActivity";
+
     DBHelper DB;
     private PreferenceManager pref;
     ProgressDialog progressDialog;
@@ -63,8 +65,6 @@ public class SessionActivity extends AppCompatActivity {
         progressDialog.show();
 
         getSessionId();
-
-
     }
 
     public void onBackPressed() {
@@ -129,7 +129,8 @@ public class SessionActivity extends AppCompatActivity {
 
                             progressDialog.dismiss();
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            logout();
+                            Log.e(TAG, "GetSessionId JSONException error:", e);
                         }
                     }
                 },
@@ -137,19 +138,17 @@ public class SessionActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        Log.e("getSessionId Error", "GetSessionId Error occurred", error);
+                        logout();
+                        Log.e(TAG, "GetSessionId Error occurred", error);
                     }
                 }
 
         );
-
         // Add the request to the RequestQueue.
         AppController.getInstance().addToRequestQueue(stringRequest);
-
-
     }
 
-    // Method to add button dynamically
+    // Add button dynamically
     private void addButton(final String sessionId) {
         Button button = new Button(this);
         button.setText(String.format("%s - %s", getString(R.string.session), sessionId));

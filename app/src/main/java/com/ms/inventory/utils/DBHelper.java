@@ -125,18 +125,18 @@ public class DBHelper extends SQLiteOpenHelper {
         return tableItemCount;
     }
 
-    public void addUsedSession(String sessionId){
+    public void addUsedSession(String sessionId) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.beginTransaction();
 
         try {
             ContentValues values = new ContentValues();
             values.put("sessionId", sessionId);
-            db.insert(SESSION_TABLE_NAME,null,values);
+            db.insert(SESSION_TABLE_NAME, null, values);
             db.setTransactionSuccessful();
-        }catch (Exception e){
-            Log.d(TAG, "Error saving saved session"+e);
-        }finally {
+        } catch (Exception e) {
+            Log.d(TAG, "Error saving saved session" + e);
+        } finally {
             db.endTransaction();
         }
     }
@@ -168,10 +168,10 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public boolean isSessionUsed(String sessionId) {
-        boolean isSessionUsed = false ;
+        boolean isSessionUsed = false;
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] projection = { "sessionId"};
+        String[] projection = {"sessionId"};
 
         String selection = "sessionId = ?";
         String[] selectionArgs = {sessionId};
@@ -270,12 +270,12 @@ public class DBHelper extends SQLiteOpenHelper {
             inventoryData.setBarcode(cursor.getString(cursor.getColumnIndex("barcode")));
             inventoryData.setsBarcode(cursor.getString(cursor.getColumnIndex("sBarcode")));
             inventoryData.setUserBarcode(cursor.getString(cursor.getColumnIndex("userBarcode")));
-            inventoryData.setStartQty((double) cursor.getFloat(cursor.getColumnIndex("startQty")));
-            inventoryData.setScanQty((double) cursor.getFloat(cursor.getColumnIndex("scanQty")));
+            inventoryData.setStartQty(cursor.getDouble(cursor.getColumnIndex("startQty")));
+            inventoryData.setScanQty(cursor.getDouble(cursor.getColumnIndex("scanQty")));
             inventoryData.setScanStartDate(cursor.getString(cursor.getColumnIndex("scanStartDate")));
-            inventoryData.setMrp((double) cursor.getFloat(cursor.getColumnIndex("mrp")));
+            inventoryData.setMrp(cursor.getDouble(cursor.getColumnIndex("mrp")));
             inventoryData.setDescription(cursor.getString(cursor.getColumnIndex("description")));
-            inventoryData.setCpu((double) cursor.getFloat(cursor.getColumnIndex("cpu")));
+            inventoryData.setCpu(cursor.getDouble(cursor.getColumnIndex("cpu")));
             cursor.close();
         }
 
@@ -337,7 +337,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return itemList;
     }
 
-
     public String getTotalScanQty() {
         String totalScan = "";
         SQLiteDatabase readDB = this.getReadableDatabase();
@@ -382,6 +381,87 @@ public class DBHelper extends SQLiteOpenHelper {
         return oldScanQty;
     }
 
+    //    public boolean addNewItem(String itemCode, String barcode, String itemDescription, String scanQty, String adjQty, String userId, String deviceId, String zoneName, String scQty, String srQty, String enQty, String createDate, String systemQty, String sQty, String outletCode, String salePrice) {
+//
+//        ContentValues values = new ContentValues();
+//
+//        values.put(ITEM_CODE_COL, itemCode);
+//        values.put(BARCODE_COL, barcode);
+//        values.put(ITEM_DESCRIPTION_COL, itemDescription);
+//        values.put(SCAN_QTY_COL, scanQty);
+//        values.put(ADJ_QTY_COL, adjQty);
+//        values.put(USER_ID_COL, userId);
+//        values.put(DEVICE_ID_COL, deviceId);
+//        values.put(ZONE_NAME_COL, zoneName);
+//        values.put(SC_QTY_COL, scQty);
+//        values.put(SR_QTY_COL, srQty);
+//        values.put(EN_QTY_COL, enQty);
+//        values.put(CREATE_DATE_COL, createDate);
+//        values.put(SYSTEM_QTY_COL, systemQty);
+//        values.put(S_QTY_COL, sQty);
+//        values.put(OUTLET_CODE_COL, outletCode);
+//        values.put(SALE_PRICE_COL, salePrice);
+//
+//        SQLiteDatabase readDB = this.getReadableDatabase();
+//        SQLiteDatabase writeDB = this.getWritableDatabase();
+//
+//        String[] columns = {BARCODE_COL, SCAN_QTY_COL};
+//        String selection = BARCODE_COL + "=?";
+//        String[] selectionArgs = new String[1];
+//        selectionArgs[0] = barcode;
+//        Cursor cursor = readDB.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+//        int count = cursor.getCount();
+//
+//        if (count > 0) {
+//            String oldScanQty = "";
+//            if (cursor.moveToFirst()) {
+//                do {
+//                    oldScanQty = cursor.getString(1);
+//                } while (cursor.moveToNext());
+//            }
+//
+//            double newScanQty = Double.parseDouble(oldScanQty) + Double.parseDouble(scanQty);
+//            String newScanQtyStr = String.valueOf(newScanQty);
+//
+//            ContentValues scanValue = new ContentValues();
+//            scanValue.put(SCAN_QTY_COL, newScanQtyStr);
+//            long result = writeDB.update(TABLE_NAME, scanValue, "barcode=?", new String[]{barcode});
+//
+//            Log.e(TAG, "onResponse: Count Row: " + count);
+//            Log.e(TAG, "onResponse: Old Scan Quantity: " + oldScanQty);
+//            Log.e(TAG, "onResponse: Total Scan Quantity: " + newScanQtyStr);
+//
+//            cursor.close();
+//            readDB.close();
+//            writeDB.close();
+//
+//            if (result > 0) {
+//                Log.e(TAG, "onResponse: Data update successfully!");
+//                return true;
+//            } else {
+//                Log.e(TAG, "onResponse: Data update failed!");
+//                return false;
+//            }
+//
+//        } else {
+//            Log.e(TAG, "onResponse: Count Row: " + count);
+//            long result = writeDB.insert(TABLE_NAME, null, values);
+//
+//            cursor.close();
+//            readDB.close();
+//            writeDB.close();
+//
+//            if (result > 0) {
+//                Log.e(TAG, "onResponse: Data save successfully!");
+//                return true;
+//            } else {
+//                Log.e(TAG, "onResponse: Data save failed!");
+//                return false;
+//            }
+//        }
+//
+//    }
+
     public boolean addNewItem(String itemCode, String barcode, String itemDescription, String scanQty, String adjQty, String userId, String deviceId, String zoneName, String scQty, String srQty, String enQty, String createDate, String systemQty, String sQty, String outletCode, String salePrice) {
 
         ContentValues values = new ContentValues();
@@ -403,71 +483,122 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(OUTLET_CODE_COL, outletCode);
         values.put(SALE_PRICE_COL, salePrice);
 
-        SQLiteDatabase readDB = this.getReadableDatabase();
         SQLiteDatabase writeDB = this.getWritableDatabase();
 
-        String[] columns = {BARCODE_COL, SCAN_QTY_COL};
-        String selection = BARCODE_COL + "=?";
-        String[] selectionArgs = new String[1];
-        selectionArgs[0] = barcode;
-        Cursor cursor = readDB.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
-        int count = cursor.getCount();
+        Cursor cursor = writeDB.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + BARCODE_COL + " = ?", new String[]{barcode});
 
-        if (count > 0) {
-            String oldScanQty = "";
-            if (cursor.moveToFirst()) {
-                do {
-                    oldScanQty = cursor.getString(1);
-                } while (cursor.moveToNext());
-            }
+        if (cursor.getCount() > 0) {
 
+            // Getting Old Scan Qty if item already exist in the table
+            cursor.moveToFirst();
+            String oldScanQty = cursor.getString(cursor.getColumnIndex(SCAN_QTY_COL));
+
+            // Updating scan qty
             double newScanQty = Double.parseDouble(oldScanQty) + Double.parseDouble(scanQty);
             String newScanQtyStr = String.valueOf(newScanQty);
+            values.put(SCAN_QTY_COL, newScanQtyStr);
 
-            ContentValues scanValue = new ContentValues();
-            scanValue.put(SCAN_QTY_COL, newScanQtyStr);
-            long result = writeDB.update(TABLE_NAME, scanValue, "barcode=?", new String[]{barcode});
-
-            Log.e(TAG, "onResponse: Count Row: " + count);
-            Log.e(TAG, "onResponse: Old Scan Quantity: " + oldScanQty);
-            Log.e(TAG, "onResponse: Total Scan Quantity: " + newScanQtyStr);
-
+            // Deleting item with old scan qty
+            int rowsDeleted = writeDB.delete(TABLE_NAME, BARCODE_COL + " = ?", new String[]{barcode});
             cursor.close();
-            readDB.close();
-            writeDB.close();
 
-            if (result > 0) {
-                Log.e(TAG, "onResponse: Data update successfully!");
-                return true;
+            // Adding item with the new qty
+            if (rowsDeleted > 0) {
+                long result = writeDB.insert(TABLE_NAME, null, values);
+                writeDB.close();
+
+                if (result != -1) {
+                    Log.e(TAG, "Data saved as new item successfully!");
+                    return true;
+                } else {
+                    Log.e(TAG, "Failed to save data as new item!");
+                    return false;
+                }
             } else {
-                Log.e(TAG, "onResponse: Data update failed!");
+                Log.e(TAG, "Failed to delete existing item!");
                 return false;
             }
-
         } else {
-            Log.e(TAG, "onResponse: Count Row: " + count);
             long result = writeDB.insert(TABLE_NAME, null, values);
-
-            cursor.close();
-            readDB.close();
             writeDB.close();
 
-            if (result > 0) {
-                Log.e(TAG, "onResponse: Data save successfully!");
+            if (result != -1) {
+                Log.e(TAG, "New Data inserted successfully!");
                 return true;
             } else {
-                Log.e(TAG, "onResponse: Data save failed!");
+                Log.e(TAG, "Failed to insert new data!");
                 return false;
             }
         }
+    }
 
+    public ScanItems searchScanItems(String barcode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] projection = {
+                ITEM_CODE_COL,
+                BARCODE_COL,
+                ITEM_DESCRIPTION_COL,
+                SCAN_QTY_COL,
+                ADJ_QTY_COL,
+                USER_ID_COL,
+                DEVICE_ID_COL,
+                ZONE_NAME_COL,
+                SC_QTY_COL,
+                SR_QTY_COL,
+                EN_QTY_COL,
+                CREATE_DATE_COL,
+                SYSTEM_QTY_COL,
+                S_QTY_COL,
+                OUTLET_CODE_COL,
+                SALE_PRICE_COL
+        };
+
+        String selection = BARCODE_COL + " = ?";
+        String[] selectionArgs = {barcode};
+
+        Cursor cursor = db.query(
+                TABLE_NAME,            // The table to query
+                projection,            // The array of columns to return (null to return all)
+                selection,             // The columns for the WHERE clause
+                selectionArgs,         // The values for the WHERE clause
+                null,                  // Don't group the rows
+                null,                  // Don't filter by row groups
+                null                   // The sort order
+        );
+
+        ScanItems searchItems = null;
+
+        if (cursor != null && cursor.moveToFirst()) {
+            searchItems = new ScanItems(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6),
+                    cursor.getString(7),
+                    cursor.getString(8),
+                    cursor.getString(9),
+                    cursor.getString(10),
+                    cursor.getString(11),
+                    cursor.getString(12),
+                    cursor.getString(13),
+                    cursor.getString(14),
+                    cursor.getString(15)
+            );
+            cursor.close();
+        }
+
+        return searchItems;
     }
 
     public ArrayList<ScanItems> readScanItems() {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursorScanItem = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursorScanItem = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY ROWID DESC", null);
 
         ArrayList<ScanItems> scanItemsArrayList = new ArrayList<>();
 
@@ -499,12 +630,44 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void updateScanItem(String barcode, String scanQty) {
 
+//        String newQty = String.valueOf(Double.parseDouble(scanQty));
+
         SQLiteDatabase db = this.getWritableDatabase();
+        ScanItems scanItems = searchScanItems(barcode);
+
         ContentValues values = new ContentValues();
+        values.put(ITEM_CODE_COL, scanItems.itemCode);
+        values.put(BARCODE_COL, barcode);
+        values.put(ITEM_DESCRIPTION_COL, scanItems.itemDescription);
+        values.put(SCAN_QTY_COL, scanQty); // Updating new qty
+        values.put(ADJ_QTY_COL, scanItems.adjQty);
+        values.put(USER_ID_COL, scanItems.userId);
+        values.put(DEVICE_ID_COL, scanItems.deviceId);
+        values.put(ZONE_NAME_COL, scanItems.zoneName);
+        values.put(SC_QTY_COL, scanItems.scQty);
+        values.put(SR_QTY_COL, scanItems.srQty);
+        values.put(EN_QTY_COL, scanItems.enQty);
+        values.put(CREATE_DATE_COL, scanItems.createDate);
+        values.put(SYSTEM_QTY_COL, scanItems.systemQty);
+        values.put(S_QTY_COL, scanItems.sQty);
+        values.put(OUTLET_CODE_COL, scanItems.outletCode);
+        values.put(SALE_PRICE_COL, scanItems.salePrice);
 
-        values.put(SCAN_QTY_COL, scanQty);
+        // Deleting item with old scan qty
+        int rowsDeleted = db.delete(TABLE_NAME, BARCODE_COL + " = ?", new String[]{barcode});
 
-        db.update(TABLE_NAME, values, "barcode=?", new String[]{barcode});
+        // Adding item with the new qty
+        if (rowsDeleted > 0) {
+            long result = db.insert(TABLE_NAME, null, values);
+
+            if (result != -1) {
+                Log.e(TAG, "Data saved as new item successfully!");
+            } else {
+                Log.e(TAG, "Failed to save data as new item!");
+            }
+        } else {
+            Log.e(TAG, "Failed to delete existing item!");
+        }
         db.close();
     }
 
@@ -537,7 +700,6 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

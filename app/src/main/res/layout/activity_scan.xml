@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,8 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
-                android:paddingTop="5dp"
-                android:paddingRight="15dp">
+                android:paddingRight="15dp"
+                android:paddingTop="5dp">
 
                 <TableRow
                     android:layout_marginBottom="5dp"
@@ -60,11 +61,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Barcode: " />
+                        android:text="Barcode: "/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
                         android:layout_height="30dp"
+                        android:layout_width="0dp"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_item_code"
@@ -81,24 +82,24 @@
                             android:background="@android:color/white"
                             android:imeOptions="actionSearch"
                             android:padding="3dp"
-                            android:singleLine="true" />
+                            android:singleLine="true"/>
 
                         <mehdi.sakout.fancybuttons.FancyButton
                             android:id="@+id/btn_barcode_enter"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="-5dp"
-                            android:layout_marginTop="-5dp"
-                            android:layout_marginRight="-5dp"
                             android:layout_marginBottom="-5dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginRight="-5dp"
+                            android:layout_marginTop="-5dp"
                             android:onClick="onClick"
-                            android:paddingLeft="5dp"
-                            android:paddingTop="5dp"
-                            android:paddingRight="10dp"
                             android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
                             fancy:fb_defaultColor="@color/button_normal"
                             fancy:fb_focusColor="@color/button_pressed"
-                            fancy:fb_text="Enter" />
+                            fancy:fb_text="Enter"/>
 
                     </LinearLayout>
                 </TableRow>
@@ -106,17 +107,17 @@
                 <TableRow
                     android:id="@+id/layout_item_code"
                     android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:gravity="center">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Item Code: " />
+                        android:text="Item Code: "/>
 
                     <LinearLayout
-                        android:layout_width="0dp"
                         android:layout_height="30dp"
+                        android:layout_width="0dp"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_item_code"
@@ -131,29 +132,29 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="#DADADA"
-                            android:enabled="false"
+                            android:textColor="@drawable/color_edittext"
                             android:imeOptions="actionSearch"
                             android:padding="3dp"
                             android:singleLine="true"
-                            android:textColor="@drawable/color_edittext" />
+                            android:enabled="false"/>
 
                         <mehdi.sakout.fancybuttons.FancyButton
                             android:id="@+id/btn_item_enter"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="-5dp"
-                            android:layout_marginTop="-5dp"
-                            android:layout_marginRight="-5dp"
                             android:layout_marginBottom="-5dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginRight="-5dp"
+                            android:layout_marginTop="-5dp"
                             android:onClick="onClick"
-                            android:paddingLeft="5dp"
-                            android:paddingTop="5dp"
-                            android:paddingRight="10dp"
                             android:paddingBottom="5dp"
-                            android:visibility="gone"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
                             fancy:fb_defaultColor="@color/button_normal"
                             fancy:fb_focusColor="@color/button_pressed"
-                            fancy:fb_text="Enter" />
+                            fancy:fb_text="Enter"
+                            android:visibility="gone"/>
 
                     </LinearLayout>
                 </TableRow>
@@ -164,7 +165,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="left|center"
-                        android:text="Style Name: " />
+                        android:text="Style Name: "/>
 
                     <TextView
                         android:id="@+id/tv_description"
@@ -173,21 +174,22 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_textview"
-                        android:lines="2"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="7dp"
-                        android:paddingRight="7dp"
                         android:paddingBottom="8dp"
-                        android:text="" />
+                        android:paddingLeft="8dp"
+                        android:paddingRight="7dp"
+                        android:paddingTop="7dp"
+                        android:text=""
+                        android:lines="2"/>
 
                 </TableRow>
 
-                <TableRow android:layout_marginBottom="5dp">
+                <TableRow
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MRP: " />
+                        android:text="MRP: "/>
 
                     <TextView
                         android:id="@+id/tv_mrp"
@@ -200,7 +202,7 @@
                         android:imeOptions="actionDone"
                         android:inputType="number"
                         android:singleLine="true"
-                        android:textColor="@drawable/color_edittext" />
+                        android:textColor="@drawable/color_edittext"/>
                 </TableRow>
 
                 <TableRow
@@ -211,7 +213,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stock Qty: " />
+                        android:text="Stock Qty: "/>
 
                     <EditText
                         android:id="@+id/edt_stock_qty"
@@ -224,18 +226,17 @@
                         android:imeOptions="actionDone"
                         android:inputType="number"
                         android:singleLine="true"
-                        android:textColor="@drawable/color_edittext" />
+                        android:textColor="@drawable/color_edittext"/>
                 </TableRow>
 
 
-                <TableRow
-                    android:layout_marginBottom="5dp"
+                <TableRow android:layout_marginBottom="5dp"
                     android:gravity="center">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scan Qty: " />
+                        android:text="Scan Qty: "/>
 
                     <EditText
                         android:id="@+id/edt_scan_qty"
@@ -247,7 +248,7 @@
                         android:imeOptions="actionDone"
                         android:inputType="numberDecimal"
                         android:singleLine="true"
-                        android:textColor="@drawable/color_edittext" />
+                        android:textColor="@drawable/color_edittext"/>
                     <!--android:inputType="number"-->
 
                     <CheckBox
@@ -255,7 +256,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
-                        android:text="Multiple Qty" />
+                        android:text="Multiple Qty"/>
                 </TableRow>
 
 
@@ -264,7 +265,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Item Total Scan Qty: " />
+                        android:text="Item Total Scan Qty: "/>
 
                     <TextView
                         android:id="@+id/tv_item_total_scan_qty"
@@ -277,7 +278,7 @@
                         android:imeOptions="actionDone"
                         android:inputType="number"
                         android:singleLine="true"
-                        android:textColor="@drawable/color_edittext" />
+                        android:textColor="@drawable/color_edittext"/>
 
                     <!--<RadioButton
                         android:id="@+id/rdbtn_multiple_qty"
@@ -287,13 +288,13 @@
                         android:text="Multiple Qty"/>-->
 
                 </LinearLayout>
-
-                <TableRow android:layout_marginBottom="5dp">
+                <TableRow
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Category Name: " />
+                        android:text="Category Name: "/>
 
                     <TextView
                         android:id="@+id/tv_lastScannedItem"
@@ -306,7 +307,7 @@
                         android:imeOptions="actionDone"
                         android:inputType="number"
                         android:singleLine="true"
-                        android:textColor="@drawable/color_edittext" />
+                        android:textColor="@drawable/color_edittext"/>
                 </TableRow>
 
                 <LinearLayout
@@ -324,11 +325,11 @@
                         android:padding="5dp"
                         fancy:fb_defaultColor="@color/button_close"
                         fancy:fb_focusColor="@color/button_close"
-                        fancy:fb_text="Close" />
+                        fancy:fb_text="Close"/>
 
                     <TextView
                         android:layout_width="5dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
 
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/btn_save"
@@ -339,11 +340,11 @@
                         android:padding="5dp"
                         fancy:fb_defaultColor="@color/button_normal"
                         fancy:fb_focusColor="@color/button_pressed"
-                        fancy:fb_text="Save" />
+                        fancy:fb_text="Save"/>
 
                     <TextView
                         android:layout_width="5dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
 
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/btn_clear"
@@ -354,7 +355,7 @@
                         android:padding="5dp"
                         fancy:fb_defaultColor="@color/button_clear"
                         fancy:fb_focusColor="@color/button_clear"
-                        fancy:fb_text="Clear" />
+                        fancy:fb_text="Clear"/>
 
                 </LinearLayout>
 
@@ -365,15 +366,15 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:gravity="center_vertical"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="Total Scan Qty:" />
+                        android:text="Total Scan Qty:"/>
 
                     <TextView
                         android:layout_width="5dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
 
                     <TextView
                         android:id="@+id/tv_total_scan_qty"
@@ -382,15 +383,15 @@
                         android:layout_weight="1"
                         android:background="@drawable/bg_edittext"
                         android:enabled="false"
-                        android:gravity="center"
                         android:singleLine="true"
                         android:text="00"
-                        android:textColor="@drawable/color_edittext"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@drawable/color_edittext"/>
 
                     <TextView
                         android:layout_width="5dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"/>
 
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/btn_view_all"
@@ -401,7 +402,7 @@
                         android:padding="5dp"
                         fancy:fb_defaultColor="@color/button_normal"
                         fancy:fb_focusColor="@color/button_pressed"
-                        fancy:fb_text="View" />
+                        fancy:fb_text="View"/>
 
                 </LinearLayout>
 
@@ -420,11 +421,188 @@
                         android:padding="5dp"
                         fancy:fb_defaultColor="@color/button_green_dark"
                         fancy:fb_focusColor="@color/button_green_light"
-                        fancy:fb_text="Save All" />
+                        fancy:fb_text="Save All"/>
 
                 </LinearLayout>
 
             </TableLayout>
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item Code: "/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description: "/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sale Qty: "/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Sale Price: "/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1.5"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stock Qty: "/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:singleLine="true"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan Qty: "/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:singleLine="true"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Multiple Qty"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Close"/>
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Add New"/>
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Clear"/>
+
+                </LinearLayout>
+
+            </LinearLayout>-->
+
 
         </LinearLayout>
 

@@ -15,33 +15,33 @@
         android:background="#E37F54"
         android:padding="5dp">
 
-        <EditText
-            android:id="@+id/edt_search"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:hint="@string/search_items"
-            android:background="@android:color/white"
-            android:padding="6dp"
-            android:inputType="text"
-            android:imeOptions="actionSearch"/>
-        <!--<Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:onClick="onClick"/>-->
-        <!--<ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search"
-            android:onClick="onClick"/>-->
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            fancy:fb_defaultColor="@color/button_normal"
-            fancy:fb_focusColor="@color/button_pressed"
-            fancy:fb_text="Search"
-            android:onClick="onClick"/>
+            <EditText
+                android:id="@+id/edt_search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:hint="@string/search_items"
+                android:background="@android:color/white"
+                android:padding="6dp"
+                android:inputType="text"
+                android:imeOptions="actionSearch"/>
+            <!--<Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:onClick="onClick"/>-->
+            <!--<ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_search"
+                android:onClick="onClick"/>-->
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                fancy:fb_defaultColor="@color/button_normal"
+                fancy:fb_focusColor="@color/button_pressed"
+                fancy:fb_text="Search"
+                android:onClick="onClick"/>
 
 
     </LinearLayout>

@@ -22,6 +22,13 @@
     <string name="online_mode">Online Mode</string>
     <string name="no_session_selected">No Session Selected.</string>
     <string name="no_items_are_found">No items are found</string>
+    <string name="search">Search</string>
+    <string name="adjust_scan_quantity">Adjust Scan Quantity</string>
+    <string name="barcode">Barcode:</string>
+    <string name="item_code">Item Code:</string>
+    <string name="stock_qty">Stock Qty:</string>
+    <string name="scan_qty">Scan Qty:</string>
+    <string name="adj_qty">Adj Qty:</string>
     <string name="utf_8">UTF-8</string>
 
 </resources>

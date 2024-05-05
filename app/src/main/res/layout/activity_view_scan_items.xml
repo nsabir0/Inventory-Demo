@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.ViewScanItems">
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activity.ViewScanItems">
 
-    <!--recycler view for displaying our courses-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVScanItems"
+    <LinearLayout
+        android:id="@+id/search_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="#E37F54"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:hint="@string/search_items"
+            android:background="@android:color/white"
+            android:padding="6dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:autofillHints="" />
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button"
+            android:text="@string/search" />
+
+    </LinearLayout>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/idRVScanItems"
+    android:layout_below="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--    android:id="@+id/idRVScanItems"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent" />-->
 
 </RelativeLayout>
