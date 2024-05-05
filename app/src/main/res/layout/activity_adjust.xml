@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.ms.inventory.activity.AdjustActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="20dp">
+                <TextView android:text="Adjust Scan Quantity"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="bold"
+                    />
+
+                <TableRow
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barcode: "/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_item_code"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <EditText
+                            android:id="@+id/edt_barcode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:imeOptions="actionSearch"
+                            android:padding="5dp"
+                            android:paddingBottom="3dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="3dp"
+                            android:singleLine="true"/>
+
+                        <mehdi.sakout.fancybuttons.FancyButton
+                            android:id="@+id/btn_barcode_enter"
+                            fancy:fb_defaultColor="@color/button_normal"
+                            fancy:fb_focusColor="@color/button_pressed"
+                            fancy:fb_text="Enter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="-5dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginRight="-5dp"
+                            android:layout_marginTop="-5dp"
+                            android:onClick="onClick"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"/>
+
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item Code: "/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_item_code"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <EditText
+                            android:id="@+id/edt_item_code"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="#DADADA"
+                            android:textColor="@drawable/color_edittext"
+                            android:imeOptions="actionSearch"
+                            android:padding="5dp"
+                            android:paddingBottom="3dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="3dp"
+                            android:singleLine="true"
+                            android:enabled="false"/>
+
+                        <mehdi.sakout.fancybuttons.FancyButton
+                            android:id="@+id/btn_item_enter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="-5dp"
+                            android:layout_marginLeft="-5dp"
+                            android:layout_marginRight="-5dp"
+                            android:layout_marginTop="-5dp"
+                            android:onClick="onClick"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
+                            fancy:fb_defaultColor="@color/button_normal"
+                            fancy:fb_focusColor="@color/button_pressed"
+                            fancy:fb_text="Enter"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+                </TableRow>
+                <TableRow android:id="@+id/layout_stock"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stock Qty: "/>
+
+                    <EditText
+                        android:id="@+id/edt_stock_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:enabled="false"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <TableRow android:id="@+id/layout_scan_qty"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan Qty: "/>
+
+                    <EditText
+                        android:id="@+id/edt_scan_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:enabled="false"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <!--<LinearLayout android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan Qty: "/>
+
+                    <TextView
+                        android:id="@+id/tv_total_scan_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_textview"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textStyle="bold"/>
+
+                    &lt;!&ndash;<RadioButton
+                        android:id="@+id/rdbtn_multiple_qty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Multiple Qty"/>&ndash;&gt;
+
+                </LinearLayout>-->
+
+                <TableRow android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adj Qty: "/>
+
+                    <EditText
+                        android:id="@+id/edt_adjusted_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:enabled="false"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adj Qty: "/>
+
+                    <EditText
+                        android:id="@+id/edt_adjust_qty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal|numberSigned"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Close"/>
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_save"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Adjust"/>
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btn_clear"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Clear"/>
+
+                </LinearLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

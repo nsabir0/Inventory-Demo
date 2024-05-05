@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Global Setting">
+
+    <Preference
+        android:key="pref_key_ip_config"
+        android:title="Server Configure">
+        <intent android:action="alex.intent.inventory.global.config" />
+    </Preference>
+
+    <ListPreference
+        android:defaultValue="Online"
+        android:entries="@array/pref_working_mode_array"
+        android:entryValues="@array/pref_working_mode_array"
+        android:key="pref_key_working_mode"
+        android:summary="Online"
+        android:title="Working Mode" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_key_multi_scan_qty"
+        android:summary="Enabled"
+        android:title="Default Multiple Scan Qty" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_key_stock_visibility"
+        android:summary="Show"
+        android:title="Stock Visibility" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_key_item_cv"
+        android:summary="Show"
+        android:title="Item Code Visibility" />
+
+    <Preference
+        android:key="pref_key_device_id"
+        android:title="Device ID" />
+    <Preference
+        android:key="pref_key_session_used"
+        android:summary="No session used before"
+        android:title="Session Used" />
+
+
+</PreferenceScreen>

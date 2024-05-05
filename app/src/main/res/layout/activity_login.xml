@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.LoginActivity"
+    android:background="@drawable/background_login">
+
+    <LinearLayout
+        android:id="@+id/layout_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/point"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circle_shape" />
+
+        <TextView
+            android:id="@+id/text_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/offline_mode"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inventory"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginBottom="40dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_above="@+id/layout_login"/>
+
+    <LinearLayout
+        android:id="@+id/layout_login"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#44BFFFFF"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#CCC"
+            android:layout_margin="2dp"
+            android:hint="@string/user_name"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:imeOptions="actionGo"
+            android:autofillHints="Username" />
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#44BFFFFF"
+            android:padding="10dp"
+            android:layout_margin="2dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#CCC"
+            android:hint="@string/password"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:imeOptions="actionGo"
+            android:autofillHints="Password" />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fancy:fb_defaultColor="#441976D2"
+            fancy:fb_focusColor="#4995DF"
+            fancy:fb_text="Login"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_borderColor="#88FFFFFF"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:onClick="onClick"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/btn_setting"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="18dp"
+        android:onClick="onClick"
+        android:padding="5dp"
+        android:src="@drawable/ic_settings_2"
+        app:cb_color="#0099CC00"
+        app:cb_pressedRingWidth="12dip" />
+
+</RelativeLayout>

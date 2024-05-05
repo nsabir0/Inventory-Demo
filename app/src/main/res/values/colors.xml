@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#6754A3</color>
+    <color name="colorPrimaryDark">#54418F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="button_normal">#1976D2</color>
+    <color name="button_pressed">#4995DF</color>
+
+    <color name="button_green_dark">#008000</color>
+    <color name="button_green_light">#00AA00</color>
+
+    <color name="background_login">#725DB6</color>
+    <color name="background_setting">#956FD6</color>
+
+    <color name="button_close">#FFA500</color>
+    <color name="button_clear">#FF0000</color>
+
+    <color name="black">#000000</color>
+
+    <color name="background_progress_dialog">#66212121</color>
+</resources>

@@ -1,0 +1,8 @@
+<!-- circle_shape_green.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#00FF00"/> <!-- Green color code for online mode -->
+    <size
+        android:width="16dp"
+        android:height="16dp"/>
+</shape>

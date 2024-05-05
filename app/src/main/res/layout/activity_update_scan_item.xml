@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activity.UpdateScanItemActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp">
+
+                <TableRow
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barcode: "/>
+
+                    <TextView
+                        android:id="@+id/tvu_barcode_id"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:enabled="false"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <TableRow android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center"
+                        android:text="Style Name: "/>
+
+                    <TextView
+                        android:id="@+id/tvu_description_id"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_textview"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="7dp"
+                        android:paddingTop="7dp"
+                        android:text=""
+                        android:lines="2"/>
+
+                </TableRow>
+
+
+                <TableRow android:layout_marginBottom="5dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan Qty: "/>
+
+                    <EditText
+                        android:id="@+id/edtu_scan_qty_id"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edittext"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:textColor="@drawable/color_edittext"/>
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btnu_cancel_id"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        fancy:fb_defaultColor="@color/button_close"
+                        fancy:fb_focusColor="@color/button_close"
+                        fancy:fb_text="Close"/>
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btnu_save_id"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        fancy:fb_defaultColor="@color/button_normal"
+                        fancy:fb_focusColor="@color/button_pressed"
+                        fancy:fb_text="Update"/>
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"/>
+
+                    <mehdi.sakout.fancybuttons.FancyButton
+                        android:id="@+id/btnu_delete_id"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        fancy:fb_defaultColor="@color/button_clear"
+                        fancy:fb_focusColor="@color/button_clear"
+                        fancy:fb_text="Delete"/>
+
+                </LinearLayout>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

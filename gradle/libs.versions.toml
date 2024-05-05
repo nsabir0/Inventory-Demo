@@ -1,0 +1,42 @@
+[versions]
+agp = "8.3.2"
+cardview = "1.0.0"
+circlebutton = "1.1"
+fancybuttons = "1.8.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+#noinspection GradleDependency
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+retrofit = "2.11.0"
+sugar = "1.5"
+volley = "1.2.1"
+annotation = "1.7.1"
+cameraCore = "1.3.3"
+zxingAndroidEmbedded = "4.3.0"
+
+[libraries]
+cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+circlebutton = { module = "com.github.markushi:circlebutton", version.ref = "circlebutton" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+fancybuttons = { module = "com.github.medyo:fancybuttons", version.ref = "fancybuttons" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+sugar = { module = "com.github.satyan:sugar", version.ref = "sugar" }
+volley = { module = "com.android.volley:volley", version.ref = "volley" }
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
+zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+

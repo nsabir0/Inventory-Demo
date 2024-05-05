@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SettingActivity">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:padding="20dp">
+
+        <TableRow
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="Host: "
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_host"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:hint="http://192.168.0.1"
+                android:singleLine="true"/>
+
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="10dp">
+
+            <TextView
+                android:text="Zone Name: "
+                android:textStyle="bold"
+                android:layout_gravity="left|center_vertical"/>
+
+            <!--<EditText
+                android:id="@+id/edt_zone_name"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:hint="ex: ABCD"
+                android:singleLine="true"
+                android:background="@drawable/bg_edittext"
+                android:capitalize="words"/>-->
+            <Spinner
+                android:id="@+id/spn_zone_name"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_spinner"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="10dp">
+
+            <TextView
+                android:text="Outlet Code: "
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_outlet_code"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:hint="ABC123"
+                android:singleLine="true"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <!--<RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/rdbtn_offline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="Offline Mode"/>
+
+        <RadioButton
+            android:id="@+id/rdbtn_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online Mode"/>
+    </RadioGroup>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            fancy:fb_defaultColor="@color/button_normal"
+            fancy:fb_focusColor="@color/button_pressed"
+            fancy:fb_text="Cancel"
+            fancy:fb_textColor="#FFFFFF"/>
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            fancy:fb_defaultColor="@color/button_normal"
+            fancy:fb_focusColor="@color/button_pressed"
+            fancy:fb_text="Save"
+            fancy:fb_textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>

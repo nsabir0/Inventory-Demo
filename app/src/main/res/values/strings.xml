@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Inventory Scanner</string>
+
+    <string-array name="pref_working_mode_array">
+        <item>Online</item>
+        <item>Offline</item>
+    </string-array>
+
+
+    <string name="DATABASE">inventorydb.db</string>
+    <string name="user_name_emp_field_err">Please provide a valid user name</string>
+    <string name="emp_pass_field_err">Please provide a password</string>
+    <string name="select_a_session_id">Select a Session ID:</string>
+    <string name="session">"Session "</string>
+    <string name="_00">00</string>
+    <string name="search_items">Search Items</string>
+    <string name="my_data_has_headers">My Data has headers</string>
+    <string name="inventory">Inventory</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="online_mode">Online Mode</string>
+    <string name="no_session_selected">No Session Selected.</string>
+    <string name="no_items_are_found">No items are found</string>
+    <string name="utf_8">UTF-8</string>
+
+</resources>
